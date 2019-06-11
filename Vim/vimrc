@@ -6,7 +6,7 @@
 "
 "
 " Author: Richard de Wit
-" Repo:   https://github.com/richarddewit/dotfiles/vim/vimrc
+" Repo:   https://github.com/richarddewit/doteditors/Vim/vimrc
 
 
 " Setup vim-plug  ----------------------------------------------------------{{{

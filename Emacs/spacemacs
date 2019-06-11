@@ -741,8 +741,8 @@ before packages are loaded."
   (advice-add 'web-mode-on-engine-setted :after #'my-web-setup-yas)
 
   (eval-after-load 'yasnippet
-    '(let ((dir "~/dotfiles/editors/Emacs/snippets/web-mode-engines"))
-       (add-to-list 'yas-snippet-dirs "~/dotfiles/editors/Emacs/snippets/")
+    '(let ((dir "~/doteditors/Emacs/snippets/web-mode-engines"))
+       (add-to-list 'yas-snippet-dirs "~/doteditors/Emacs/snippets/")
        (add-to-list 'yas-snippet-dirs dir)
        (yas-load-directory dir)))
 
@@ -773,7 +773,7 @@ before packages are loaded."
 
   ;; Purpose
   (require 'window-purpose)
-  (push "~/dotfiles/editors/Emacs/purpose-layouts" purpose-layout-dirs)
+  (push "~/doteditors/Emacs/purpose-layouts" purpose-layout-dirs)
 
   )
 

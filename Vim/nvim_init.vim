@@ -6,7 +6,7 @@
 "        \_\         /_/
 "
 " Author: Richard de Wit
-" Repo:   https://github.com/richarddewit/dotfiles/vim/nvim_init.vim
+" Repo:   https://github.com/richarddewit/doteditors/Vim/nvim_init.vim
 
 
 source ~/.vimrc
