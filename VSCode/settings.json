@@ -1,4 +1,13 @@
 {
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "auto.languages": {
+    "crystal": {
+      "stringWrapper": "\"",
+      "symbol": "#"
+    }
+  },
   "beautify.language": {
     "css": ["css", "scss"],
     "html": ["htm", "html", "blade"],
@@ -7,6 +16,9 @@
       "type": ["javascript", "json"]
     }
   },
+  "crystal-lang.completion": true,
+  "crystal-lang.hover": true,
+  "crystal-lang.implementations": true,
   "dart.allowAnalytics": false,
   "diffEditor.ignoreTrimWhitespace": true,
   "docker-explorer.enableTelemetry": false,
@@ -24,6 +36,8 @@
   "editor.formatOnSave": true,
   "editor.lineNumbers": "off",
   "editor.minimap.renderCharacters": false,
+  "editor.quickSuggestions": false,
+  "editor.quickSuggestionsDelay": 200,
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
   "editor.smoothScrolling": true,
@@ -37,6 +51,9 @@
   "emmet.triggerExpansionOnTab": true,
   "explorer.openEditors.visible": 0,
   "extensions.showRecommendationsOnlyOnDemand": true,
+  "files.associations": {
+    "Procfile*": "yaml"
+  },
   "files.autoSave": "onWindowChange",
   "files.exclude": {
     "**/.DS_Store": true,
@@ -51,10 +68,6 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "git.autofetch": true,
-  "gitlens.advanced.telemetry.enabled": false,
-  "gitlens.codeLens.enabled": false,
-  "gitlens.keymap": "alternate",
-  "gitlens.showWhatsNewAfterUpgrades": false,
   "html-css-class-completion.enableEmmetSupport": true,
   "html.format.wrapAttributes": "preserve-aligned",
   "html.format.wrapLineLength": 180,
@@ -69,8 +82,8 @@
   "prettier.disableLanguages": ["markdown"],
   "prettier.trailingComma": "es5",
   "python.jediEnabled": false,
-  "python.venvPath": "$WORKON_HOME",
   "python.linting.pylintArgs": ["--rcfile=setup.cfg"],
+  "python.venvPath": "$WORKON_HOME",
   "search.smartCase": true,
   "svgviewer.enableautopreview": true,
   "telemetry.enableCrashReporter": false,
@@ -759,7 +772,7 @@
       ]
     }
   ],
-  "vim.statusBarColorControl": true,
+  "vim.statusBarColorControl": false,
   "vim.statusBarColors.insert": "#83a598",
   "vim.statusBarColors.normal": "#b8bb26",
   "vim.statusBarColors.visual": "#fb4934 ",
@@ -801,6 +814,8 @@
     }
   ],
   "vim.visualstar": true,
+  "vsicons.presets.foldersAllDefaultIcon": true,
+  "vsicons.projectDetection.autoReload": true,
   "window.enableMenuBarMnemonics": false,
   "window.menuBarVisibility": "toggle",
   "window.openFilesInNewWindow": "on",
@@ -809,14 +824,15 @@
   "window.zoomLevel": 0,
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
-    "statusBar.background": "#b8bb26",
-    "statusBar.noFolderBackground": "#b8bb26",
-    "statusBar.debuggingBackground": "#b8bb26"
+    "statusBar.background": "#383838",
+    "statusBar.debuggingBackground": "#b8bb26",
+    "statusBar.noFolderBackground": "#b30000"
   },
   "workbench.colorTheme": "Gruvbox Dark (Medium)",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.showTabs": false,
   "workbench.editor.tabCloseButton": "off",
+  "workbench.iconTheme": "vscode-icons",
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
   "workbench.statusBar.feedback.visible": false,
