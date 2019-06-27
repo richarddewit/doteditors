@@ -824,8 +824,10 @@
   "window.zoomLevel": 0,
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
-    "statusBar.background": "#383838",
+    "statusBar.background": "#252526",
+    "statusBar.border": "#383838",
     "statusBar.debuggingBackground": "#b8bb26",
+    "statusBar.foreground": "#ccc",
     "statusBar.noFolderBackground": "#b30000"
   },
   "workbench.colorTheme": "Gruvbox Dark (Medium)",
