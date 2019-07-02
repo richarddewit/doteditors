@@ -81,7 +81,7 @@ This function should only modify configuration layer settings."
      django
      ;; phoenix
      react
-     ;; ruby-on-rails
+     ruby-on-rails
 
      ;; 8 Fun
      emoji
@@ -142,9 +142,9 @@ This function should only modify configuration layer settings."
              python-enable-yapf-format-on-save t
              python-sort-imports-on-save t)
      ;; racket
-     ;; (ruby :variables
-     ;;       ruby-enable-enh-ruby-mode t
-     ;;       ruby-version-manager 'rbenv)
+     (ruby :variables
+           ruby-enable-enh-ruby-mode t
+           ruby-version-manager 'rbenv)
      ;; rust
      ;; scala
      ;; scheme
@@ -692,6 +692,7 @@ before packages are loaded."
 
   ;; Modes
   (add-to-list 'auto-mode-alist '("\\Pipfile\\'" . toml-mode))
+  (add-to-list 'auto-mode-alist '("\\Procfile.*\\'" . yaml-mode))
 
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
   (define-key evil-motion-state-map "j" 'evil-next-visual-line)
@@ -752,9 +753,9 @@ before packages are loaded."
        (yas-load-directory dir)))
 
   ;; Hooks
-  ;; (add-hook 'ruby-mode-hook 'robe-mode)
-  ;; (add-hook 'enh-ruby-mode-hook 'robe-mode)
   (add-hook 'dart-mode-hook 'lsp)
+  (add-hook 'ruby-mode-hook 'robe-mode)
+  (add-hook 'enh-ruby-mode-hook 'robe-mode)
 
   (defun richarddewit/django-web-mode-engine ()
     (if (projectile-project-p)
