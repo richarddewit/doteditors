@@ -104,6 +104,7 @@ This function should only modify configuration layer settings."
      ;; common-lisp
      ;; csharp
      ;; csv
+     (crystal :variables crystal-enable-auto-format t)
      ;; d
      (dart :variables
            dart-sdk-path "/opt/flutter/bin/cache/dart-sdk/"
@@ -694,6 +695,7 @@ before packages are loaded."
   ;; Modes
   (add-to-list 'auto-mode-alist '("\\Pipfile\\'" . toml-mode))
   (add-to-list 'auto-mode-alist '("\\Procfile.*\\'" . yaml-mode))
+  (add-to-list 'auto-mode-alist '("\\*.slang\\'" . slim-mode))
 
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
   (define-key evil-motion-state-map "j" 'evil-next-visual-line)
