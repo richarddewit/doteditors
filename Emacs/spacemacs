@@ -105,6 +105,9 @@ This function should only modify configuration layer settings."
      ;; csharp
      ;; csv
      ;; d
+     (dart :variables
+           dart-sdk-path "/opt/flutter/bin/cache/dart-sdk/"
+           dart-format-on-save t)
      ;; elixir
      ;; elm
      emacs-lisp
@@ -263,7 +266,6 @@ This function should only modify configuration layer settings."
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(vue-mode
-                                      dart-mode
                                       toml-mode
                                       pug-mode)
 
@@ -685,7 +687,6 @@ before packages are loaded."
    scroll-margin 20
    python-indent-guess-indent-offset nil
    python-indent-guess-indent-offset-verbose nil
-   dart-format-on-save t
    lsp-auto-guess-root t
    )
   (evil-ex-define-cmd "q[uit]" 'evil-delete-buffer)
@@ -753,7 +754,6 @@ before packages are loaded."
        (yas-load-directory dir)))
 
   ;; Hooks
-  (add-hook 'dart-mode-hook 'lsp)
   (add-hook 'ruby-mode-hook 'robe-mode)
   (add-hook 'enh-ruby-mode-hook 'robe-mode)
 
