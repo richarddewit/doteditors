@@ -58,6 +58,9 @@
   Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
   Plug 'jwalton512/vim-blade', { 'for': 'blade' }
   Plug 'lumiliet/vim-twig', { 'for': 'twig' }
+" Crystal
+  Plug 'rhysd/vim-crystal'
+  Plug 'elorest/vim-slang'
 " Other
   Plug 'chr4/nginx.vim'
   Plug 'tpope/vim-markdown'
@@ -354,6 +357,10 @@
         \   'isset': 'endisset',
         \   'empty': 'endempty',
         \ }
+" }}}
+
+" Crystal  -----------------------------------------------------------------{{{
+  let g:crystal_auto_format=1
 " }}}
 
 " FZF ----------------------------------------------------------------------{{{
