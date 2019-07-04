@@ -1,5 +1,5 @@
-aaron-bond.better-comments
 AiryShift.spaces-inside-braces
+aaron-bond.better-comments
 alefragnani.project-manager
 aliariff.auto-add-brackets
 apedroed.Happy-Flasker
@@ -8,17 +8,18 @@ brainfit.vscode-importmagic
 buenon.scratchpads
 bungcip.better-toml
 chrislajoie.vscode-modelines
+christian-kohler.npm-intellisense
+christian-kohler.path-intellisense
 codezombiech.gitignore
-CoenraadS.bracket-pair-colorizer
 cssho.vscode-svgviewer
 Dart-Code.dart-code
 Dart-Code.flutter
 dawhite.mustache
-dkundel.vscode-new-file
+dbaeumer.vscode-eslint
 dsznajder.es7-react-js-snippets
-eamodio.gitlens
 ecmel.vscode-html-css
 EditorConfig.EditorConfig
+eg2.vscode-npm-script
 emmanuelbeziat.vscode-great-icons
 esbenp.prettier-vscode
 faustinoaq.crystal-lang
@@ -33,6 +34,7 @@ HookyQR.beautify
 infeng.vscode-react-typescript
 JamesBirtles.svelte-vscode
 jeroen-meijer.pubspec-assist
+kaiwood.endwise
 mgmcdermott.vscode-language-babel
 michelemelluso.gitignore
 mikestead.dotenv
@@ -54,5 +56,4 @@ tickleforce.scrolloff
 tomphilbin.gruvbox-themes
 vscode-icons-team.vscode-icons
 vscodevim.vim
-wix.glean
 Zignd.html-css-class-completion
