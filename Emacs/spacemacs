@@ -117,7 +117,9 @@ This function should only modify configuration layer settings."
      ;; extra-langs
      ;; faust
      ;; fsharp
-     ;; go
+     (go :variables
+         go-format-before-save t
+         go-tab-width 2)
      ;; graphviz
      ;; haskell
      html
