@@ -726,7 +726,7 @@ before packages are loaded."
   (setq scroll-step 1) ;; keyboard scroll one line at a time
 
   ;; Projectile
-  (setq projectile-globally-ignored-directories (append '("_build" "node_modules" ".vscode" ".idea") projectile-globally-ignored-directories))
+  (setq projectile-globally-ignored-directories (append '("_build" "node_modules" ".vscode" ".idea" "__pycache__") projectile-globally-ignored-directories))
   (setq projectile-globally-ignored-files       (append '("*.bak" "*.old") projectile-globally-ignored-files))
   (setq projectile-project-root-files-bottom-up (append '("pubspec.yaml" "BUILD") projectile-project-root-files-bottom-up))
 
