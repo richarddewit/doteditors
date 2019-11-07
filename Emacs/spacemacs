@@ -150,7 +150,8 @@ This function should only modify configuration layer settings."
      ;; racket
      (ruby :variables
            ruby-enable-enh-ruby-mode t
-           ruby-version-manager 'rbenv)
+           ruby-version-manager 'rbenv
+           ruby-backend 'lsp)
      ;; rust
      ;; scala
      ;; scheme
@@ -760,8 +761,8 @@ before packages are loaded."
        (yas-load-directory dir)))
 
   ;; Hooks
-  (add-hook 'ruby-mode-hook 'robe-mode)
-  (add-hook 'enh-ruby-mode-hook 'robe-mode)
+  ;; (add-hook 'ruby-mode-hook 'robe-mode)
+  ;; (add-hook 'enh-ruby-mode-hook 'robe-mode)
 
   (defun richarddewit/django-web-mode-engine ()
     (if (projectile-project-p)
