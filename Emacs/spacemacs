@@ -708,6 +708,8 @@ before packages are loaded."
 
   ;; Indentation
   (setq-default
+   ;; shell-script-mode
+   sh-basic-offset 2
    ;; python-mode
    python-indent-offset 4
    ;; js2-mode
