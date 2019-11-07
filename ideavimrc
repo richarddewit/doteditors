@@ -181,6 +181,16 @@ vmap <leader>gs :<Backspace><Backspace><Backspace><Backspace><Backspace>action V
 nmap <leader>gS :action ActivateVersionControlToolWindow<CR>
 vmap <leader>gS :<Backspace><Backspace><Backspace><Backspace><Backspace>action ActivateVersionControlToolWindow<CR>
 
+" Vim uninpaired
+nmap [<Space>        O<Esc>gj
+nmap ]<Space>        o<Esc>gk
+vmap [<Space>        <Esc>O<Esc>gjgv
+vmap ]<Space>        <Esc>o<Esc>gkgv
+nmap [e              :action MoveLineUp<CR>
+nmap ]e              :action MoveLineDown<CR>
+vmap [e              :action MoveLineUp<CR>
+vmap ]e              :action MoveLineDown<CR>
+
 " Search in project
 nmap <leader>sp :action FindInPath<CR>
 vmap <leader>sp :<Backspace><Backspace><Backspace><Backspace><Backspace>action FindInPath<CR>
