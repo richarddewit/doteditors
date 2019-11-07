@@ -42,6 +42,7 @@
   Plug 'mxw/vim-jsx'
   Plug 'moll/vim-node'
   Plug 'posva/vim-vue', { 'for': 'vue' }
+  Plug 'evanleck/vim-svelte', { 'for': 'svelte' }
 " CSS
   Plug 'csscomb/vim-csscomb'
   Plug 'hail2u/vim-css3-syntax'
