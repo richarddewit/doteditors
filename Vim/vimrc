@@ -127,7 +127,7 @@
   map <Space> <leader>
   set undofile
   set undodir="$HOME/.VIM_UNDO_FILES"
-  set backupdir=~/.backups,~/.tmp,~/tmp,/var/tmp,/tmp
+  set backupdir=~/.vim/backup
 
   set list
   set listchars=tab:▸\ ,space:•,trail:•,extends:»,precedes:«
