@@ -1,0 +1,9 @@
+{
+	"getset": {
+		"prefix": "gs",
+		"body": [
+			"{ get; set; }"
+		],
+		"description": "{ get; set; }"
+	}
+}
