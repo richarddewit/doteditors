@@ -12,6 +12,7 @@ set clipboard+=ideaput
 
 set surround
 set incsearch
+set ideajoin
 
 " Center cursor
 set scrolloff=25
