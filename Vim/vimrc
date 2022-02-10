@@ -21,8 +21,6 @@
   Plug 'Yggdroot/indentLine'
   Plug 'Raimondi/delimitMate'
   Plug 'valloric/MatchTagAlways'
-  " Plug 'vim-airline/vim-airline-themes'
-  " Plug 'vim-airline/vim-airline'
   Plug 'itchyny/lightline.vim'
   Plug 'shinchu/lightline-gruvbox.vim'
   Plug 'equalsraf/neovim-gui-shim'
@@ -51,17 +49,8 @@
 " Python
   Plug 'fisadev/vim-isort', { 'for': 'python' }
   Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-  Plug 'klen/python-mode', { 'for': 'python' }
-" PHP
-  Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-  Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
-  Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
-  Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
-  Plug 'jwalton512/vim-blade', { 'for': 'blade' }
-  Plug 'lumiliet/vim-twig', { 'for': 'twig' }
-" Crystal
-  Plug 'rhysd/vim-crystal'
-  Plug 'elorest/vim-slang'
+  Plug 'psf/black', { 'for': 'python', 'branch': 'stable' }
+  Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 " Other
   Plug 'chr4/nginx.vim'
   Plug 'tpope/vim-markdown'
@@ -69,9 +58,10 @@
 
 
 " Utils
+  Plug 'dense-analysis/ale'
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'honza/vim-snippets'
-  Plug 'SirVer/ultisnips'
+  " Plug 'honza/vim-snippets'
+  " Plug 'SirVer/ultisnips'
   Plug 'mhinz/vim-startify'
   Plug '/usr/bin/fzf'
   Plug 'junegunn/fzf.vim'
@@ -339,6 +329,34 @@
 
 "}}}
 
+" ALE  ---------------------------------------------------------------------{{{
+  let g:ale_maximum_file_size = 4000000
+  let g:ale_completion_enabled = 0
+  let g:ale_fix_on_save = 1
+  let g:ale_completion_autoimport = 1
+
+  let g:ale_linters = {
+  \  'javascript': ['eslint', 'tsserver'],
+  \  'typescript': ['eslint', 'tsserver'],
+  \  'python': 'all',
+  \}
+  let g:ale_fixers = {
+  \  '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \  'css': ['prettier'],
+  \  'javascript': ['prettier'],
+  \  'typescript': ['prettier'],
+  \  'python': ['isort', 'black'],
+  \}
+
+" Disable pycodestyle in pyls; let flake8 do that
+  let g:ale_python_pyls_config = {
+  \  'pyls': {
+  \    'plugins': {'pycodestyle': {'enabled': v:false}}
+  \  }
+  \}
+
+" }}}
+
 " Python  ------------------------------------------------------------------{{{
 " python-mode
   let g:version=0
@@ -347,21 +365,6 @@
   let g:jedi#popup_on_dot=0
   let g:jedi#use_tabs_not_buffers=0
 
-" }}}
-
-" PHP  ---------------------------------------------------------------------{{{
-  let g:blade_custom_directives = ['php']
-  let g:blade_custom_directives_pairs = {
-        \   'auth': 'endauth',
-        \   'guest': 'endguest',
-        \   'php': 'endphp',
-        \   'isset': 'endisset',
-        \   'empty': 'endempty',
-        \ }
-" }}}
-
-" Crystal  -----------------------------------------------------------------{{{
-  let g:crystal_auto_format=1
 " }}}
 
 " FZF ----------------------------------------------------------------------{{{
