@@ -39,5 +39,12 @@
 			"}"
 		],
 		"description": "New PHPUnit test case"
+	},
+	"this": {
+		"prefix": "this",
+		"body": [
+			"\\$this->"
+		],
+		"description": "Shortcut for $this->"
 	}
 }
