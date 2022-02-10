@@ -79,7 +79,7 @@ This function should only modify configuration layer settings."
 
      ;; 7 Frameworks
      django
-     ;; phoenix
+     phoenix
      react
      ruby-on-rails
 
@@ -106,10 +106,10 @@ This function should only modify configuration layer settings."
      ;; csv
      (crystal :variables crystal-enable-auto-format t)
      ;; d
-     (dart :variables
-           dart-sdk-path "/opt/flutter/bin/cache/dart-sdk/"
-           dart-format-on-save t)
-     ;; elixir
+     ;; (dart :variables
+     ;;       dart-sdk-path "/opt/flutter/bin/cache/dart-sdk/"
+     ;;       dart-format-on-save t)
+     (elixir :variables elixir-backend 'alchemist)
      ;; elm
      emacs-lisp
      ;; erlang
@@ -117,9 +117,9 @@ This function should only modify configuration layer settings."
      ;; extra-langs
      ;; faust
      ;; fsharp
-     (go :variables
-         go-format-before-save t
-         go-tab-width 2)
+     ;; (go :variables
+     ;;     go-format-before-save t
+     ;;     go-tab-width 2)
      ;; graphviz
      ;; haskell
      html
@@ -127,7 +127,7 @@ This function should only modify configuration layer settings."
      ;; ipython-notebook
      ;; java
      (javascript :variables
-                 javascript-backend 'lsp
+                 ;; javascript-backend 'lsp
                  node-add-modules-path t)
      ;; latex
      ;; lua
@@ -151,8 +151,10 @@ This function should only modify configuration layer settings."
      (ruby :variables
            ruby-enable-enh-ruby-mode t
            ruby-version-manager 'rbenv
-           ruby-backend 'lsp)
-     ;; rust
+           ruby-backend 'robe)
+     ;; (rust :variables
+     ;;       rust-backend 'racer
+     ;;       rust-format-on-save t)
      ;; scala
      ;; scheme
      ;; shaders
@@ -223,7 +225,7 @@ This function should only modify configuration layer settings."
      ;; fasd
      ;; finance
      ;; geolocation
-     lsp
+     ;; lsp
      ;; imenu-list
      ;; nginx
      ;; pandoc
@@ -271,7 +273,9 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(vue-mode
                                       toml-mode
-                                      pug-mode)
+                                      pug-mode
+                                      graphql-mode
+                                      format-all)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -337,6 +341,13 @@ It should only modify the values of Spacemacs settings."
    ;; performance issues due to garbage collection operations.
    ;; (default '(100000000 0.1))
    dotspacemacs-gc-cons '(100000000 0.1)
+
+   ;; Set `read-process-output-max' when startup finishes.
+   ;; This defines how much data is read from a foreign process.
+   ;; Setting this >= 1 MB should increase performance for lsp servers
+   ;; in emacs 27.
+   ;; (default (* 1024 1024))
+   dotspacemacs-read-process-output-max (* 1024 1024)
 
    ;; If non-nil then Spacelpa repository is the primary source to install
    ;; a locked version of packages. If nil then Spacemacs will install the
@@ -699,6 +710,8 @@ before packages are loaded."
   (add-to-list 'auto-mode-alist '("\\Pipfile\\'" . toml-mode))
   (add-to-list 'auto-mode-alist '("\\Procfile.*\\'" . yaml-mode))
   (add-to-list 'auto-mode-alist '("\\*.slang\\'" . slim-mode))
+  (add-to-list 'auto-mode-alist '("\\*.leex\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\*.eex\\'" . web-mode))
 
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
   (define-key evil-motion-state-map "j" 'evil-next-visual-line)
@@ -715,6 +728,7 @@ before packages are loaded."
    python-indent-offset 4
    ;; js2-mode
    js2-basic-offset 2
+   js-indent-level 2
    ;; web-mode
    css-indent-offset 2
    web-mode-markup-indent-offset 2
@@ -761,6 +775,8 @@ before packages are loaded."
        (yas-load-directory dir)))
 
   ;; Hooks
+  (add-hook 'prog-mode-hook 'format-all-mode)
+  (add-hook 'format-all-mode-hook 'format-all-ensure-formatter)
   ;; (add-hook 'ruby-mode-hook 'robe-mode)
   ;; (add-hook 'enh-ruby-mode-hook 'robe-mode)
 
