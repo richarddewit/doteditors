@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: super without class
+# key: super
+# group: object oriented
+# --
+super().`(replace-regexp-in-string "^\\(.+\\.\\)" "" (python-info-current-defun) nil nil 1)`($1)$0

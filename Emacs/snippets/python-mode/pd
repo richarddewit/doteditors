@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Python debug
+# key: pd
+# --
+print(f'{$0=}')
