@@ -463,16 +463,13 @@ It should only modify the values of Spacemacs settings."
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
 
-   ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
-   ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font (let ((fonts '("Fira Mono for Powerline" "Source Code Pro for Powerline" "Source Code Pro")))
-                               (mapcar (lambda (font)
-                                         `(,font
-                                           :size 12
-                                           :weight normal
-                                           :width normal
-                                           :powerline-scale 1.5))
-                                       fonts))
+   ;; Default font or prioritized list of fonts. The `:size' can be specified as
+   ;; a non-negative integer (pixel size), or a floating-point (point size).
+   ;; Point size is recommended, because it's device independent. (default 10.0)
+   dotspacemacs-default-font '("JetBrains Mono"
+                               :size 8.0
+                               :weight normal
+                               :width normal)
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
