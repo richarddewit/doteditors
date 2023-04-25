@@ -127,6 +127,7 @@
   let g:indentLine_char = '▏'
   let g:indentLine_enabled = 1
   let g:indentLine_color_term = 240
+  let g:vim_json_conceal=0
   autocmd VimEnter * IndentLinesEnable
 
 " Disable delay after Esc is pressed
