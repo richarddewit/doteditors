@@ -77,7 +77,11 @@
   "editor.formatOnSave": true,
   "editor.lineNumbers": "off",
   "editor.minimap.renderCharacters": false,
-  "editor.quickSuggestions": false,
+  "editor.quickSuggestions": {
+    "comments": "off",
+    "strings": "off",
+    "other": "off"
+  },
   "editor.quickSuggestionsDelay": 200,
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
