@@ -22,7 +22,7 @@
   },
   "[python]": {
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.organizeImports": "explicit"
     }
   },
   "[typescript]": {
@@ -217,7 +217,6 @@
   "window.restoreWindows": "folders",
   "window.title": "${dirty}[${rootName}] ${activeEditorMedium}${separator}${appName}",
   "window.zoomLevel": 0,
-  "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
     "statusBar.background": "#252526",
     "statusBar.border": "#383838",
@@ -225,12 +224,14 @@
     "statusBar.foreground": "#ccc",
     "statusBar.noFolderBackground": "#b30000"
   },
-  "workbench.colorTheme": "Gruvbox Dark (Medium)",
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": "single",
   "workbench.editor.tabCloseButton": "off",
   "workbench.iconTheme": "vscode-icons",
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
-  "workbench.statusBar.visible": true
+  "workbench.statusBar.visible": true,
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.tabActionCloseVisibility": false,
+  "git.openRepositoryInParentFolders": "never"
 }
