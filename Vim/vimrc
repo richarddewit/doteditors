@@ -23,7 +23,6 @@
   Plug 'valloric/MatchTagAlways'
   Plug 'itchyny/lightline.vim'
   Plug 'shinchu/lightline-gruvbox.vim'
-  Plug 'equalsraf/neovim-gui-shim'
   Plug 'machakann/vim-highlightedyank'
 
 
@@ -40,7 +39,6 @@
   Plug 'mxw/vim-jsx'
   Plug 'moll/vim-node'
   Plug 'posva/vim-vue', { 'for': 'vue' }
-  Plug 'evanleck/vim-svelte', { 'for': 'svelte' }
 " CSS
   Plug 'csscomb/vim-csscomb'
   Plug 'hail2u/vim-css3-syntax'
@@ -60,11 +58,7 @@
 " Utils
   Plug 'dense-analysis/ale'
   Plug 'editorconfig/editorconfig-vim'
-  " Plug 'honza/vim-snippets'
-  " Plug 'SirVer/ultisnips'
   Plug 'mhinz/vim-startify'
-  Plug '/usr/bin/fzf'
-  Plug 'junegunn/fzf.vim'
   Plug 'tomtom/tcomment_vim'
   Plug 'terryma/vim-expand-region'
   Plug 'terryma/vim-multiple-cursors'
@@ -95,8 +89,6 @@
   set title
   set encoding=utf-8
   setglobal fileencoding=utf-8
-" Currently needed for neovim paste issue
-  set pastetoggle=<f6>
 " Let airline tell me my status
   set noshowmode
   set noswapfile
@@ -368,28 +360,6 @@
 
 " }}}
 
-" FZF ----------------------------------------------------------------------{{{
-
-" Install: https://github.com/junegunn/fzf
-  let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
-  map <C-p> :FZF<CR>
-  map <leader>a :Ag<CR>
-
-  vmap <leader>aw y:Ag <C-r>0<CR>
-" nmap <leader>aw :Ag <C-r><C-w>
-  map <leader>h :History<CR>
-  map <leader>l :Lines<CR>
-
-"}}}
-
-" " YouCompleteMe  -----------------------------------------------------------{{{
-"
-"   let g:ycm_complete_in_comments_and_strings=1
-"   let g:ycm_key_list_select_completion=['<Down>']
-"   let g:ycm_key_list_previous_completion=['<Up>']
-"
-" " }}}
-
 " Folding ----------------------------------------------------------------- {{{
 
 " Space to toggle folds.
@@ -433,49 +403,14 @@
 
 " }}}
 
-" Pulse Line  --------------------------------------------------------------{{{
-
-" function! s:Pulse() " {{{
-"     redir => old_hi
-"         silent execute 'hi CursorLine'
-"     redir END
-"     let old_hi = split(old_hi, '\n')[0]
-"     let old_hi = substitute(old_hi, 'xxx', '', '')
-"
-"     let steps = 8
-"     let width = 1
-"     let start = width
-"     let end = steps * width
-"     let color = 233
-"
-"     for i in range(start, end, width)
-"         execute "hi CursorLine ctermbg=" . (color + i)
-"         redraw
-"         sleep 6m
-"     endfor
-"     for i in range(end, start, -1 * width)
-"         execute "hi CursorLine ctermbg=" . (color + i)
-"         redraw
-"         sleep 6m
-"     endfor
-"
-"     execute 'hi ' . old_hi
-" endfunction " }}}
-" command! -nargs=0 Pulse call s:Pulse()
-
-" }}}
-
 " Cursor settings  ---------------------------------------------------------{{{
+
 if !has("nvim")
   " Switch from block-cursor to vertical-line-cursor when going into/out of insert mode
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-  " For Gnome-terminal
-  au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-  au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-  au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-  au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 endif
+
 " }}}
 
 " Filetype settings  -------------------------------------------------------{{{
